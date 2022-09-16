@@ -1,0 +1,33 @@
+// main: ../style.less
+
+@columns: 12;
+@grid-width: 1200px;
+
+.grid(@columns, @i: 1) when (@i <= @columns) {
+    .col-@{i}{
+        width: percentage((@i / @columns), rem);
+        padding-left: 1rem;
+        padding-right: 1rem;
+        flex: 1;
+        border: 1px solid tomato;
+    }
+
+    .grid(@columns, @i + 1);
+}
+.container {
+    width: 100%;
+    max-width: @grid-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+
+.grid(@columns);

@@ -1,0 +1,24 @@
+// compress: false, sourceMap:true
+@import "vars";  
+@import "mixins";
+
+html, body {
+    font-size: 15px;
+}
+body {
+    // background-color: @secondary;
+    margin: 0;
+    color: @black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+//Blocks
+@import "blocks/title";
+@import "blocks/btn.less";
+@import "blocks/post.less";
+@import "blocks/grid.less";
